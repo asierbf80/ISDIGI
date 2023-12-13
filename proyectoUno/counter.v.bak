@@ -1,0 +1,17 @@
+module counter(CLK, RSTn, CLEAR, EN, COUNT);
+
+parameter N = 5;
+
+input CLK, RSTn, CLEAR, EN;
+output reg [N-1:0] COUNT; 
+
+always @(posedge CLK or negedge RSTn)
+if (!RSTn)
+	COUNT <= 0;
+else if (CLEAR)
+	COUNT <= 0;
+else if (EN)
+	COUNT <= COUNT + 1;
+
+
+endmodule 

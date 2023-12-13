@@ -1,0 +1,10 @@
+module divisor_segmentado();
+parameter tamanyo = 8
+assign n_etapas = 1+2*tamayo;
+logic [n_etapas-1:0] start
+
+
+
+
+
+endmodule 

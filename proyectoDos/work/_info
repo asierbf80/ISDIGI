@@ -1,0 +1,247 @@
+m255
+K4
+z2
+!s11f vlog 2020.2 2020.04, Apr 19 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dW:/ISDIGI/proyectoDos
+T_opt
+!s110 1697579446
+V1Dl<X6bYOH<0PKJ`?aN?O3
+Z1 04 10 4 work tb_divisor fast 0
+=1-00505623017d-652f01b5-3ad-32ac
+Z2 o-quiet -auto_acc_if_foreign -work work +acc
+Z3 tCvgOpt 0
+n@_opt
+Z4 OL;O;2020.2;71
+R0
+T_opt1
+!s110 1699914498
+V@?8k_B[1611lCWe>W=IzB1
+R1
+=1-00505623017e-6552a301-28a-6d94
+R2
+R3
+n@_opt1
+R4
+R0
+T_opt2
+!s110 1699950705
+VROdA<eiKUDVl>mDNAE4;f0
+R1
+=1-00505623017e-65533071-13-47b4
+o-quiet -auto_acc_if_foreign -work work
+R3
+n@_opt2
+R4
+R0
+vDivisor_Algoritmico
+Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1699914484
+!i10b 1
+!s100 nUSnc2jOjMA@W1C6KOI011
+Z6 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IA:Zj]7e3e4V3mfjUmKBRj0
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1699871291
+8W:/ISDIGI/proyectoDos/Divisor_Algoritmico.sv
+FW:/ISDIGI/proyectoDos/Divisor_Algoritmico.sv
+!i122 140
+L0 1 75
+Z8 OL;L;2020.2;71
+r1
+!s85 0
+31
+!s108 1699914484.000000
+!s107 W:/ISDIGI/proyectoDos/Divisor_Algoritmico.sv|
+!s90 -reportprogress|300|-work|work|W:/ISDIGI/proyectoDos/Divisor_Algoritmico.sv|
+!i113 0
+Z9 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+n@divisor_@algoritmico
+vDivisor_Algoritmico_pruebas
+R5
+!s110 1698229742
+!i10b 1
+!s100 6Tie0Yb=TJ]R6PzWoiMTc0
+R6
+I5e7e>BPfaD0GYbEH@7j0G0
+R7
+S1
+R0
+w1698229340
+8W:/ISDIGI/proyectoDos/divisor_parallel.sv
+FW:/ISDIGI/proyectoDos/divisor_parallel.sv
+!i122 57
+L0 18 54
+R8
+r1
+!s85 0
+31
+!s108 1698229741.000000
+!s107 W:/ISDIGI/proyectoDos/divisor_parallel.sv|
+!s90 -reportprogress|300|-work|work|W:/ISDIGI/proyectoDos/divisor_parallel.sv|
+!i113 0
+R9
+R3
+n@divisor_@algoritmico_pruebas
+vdivisor_segmentado
+R5
+!s110 1699914485
+!i10b 1
+!s100 4DiNFYi@PD6[`4GMU2Kni3
+R6
+IEemQ<Mh@jcVO403R2OfBa1
+R7
+S1
+R0
+w1699914358
+8W:/ISDIGI/proyectoDos/divisor_segmentado.sv
+FW:/ISDIGI/proyectoDos/divisor_segmentado.sv
+!i122 141
+L0 1 78
+R8
+r1
+!s85 0
+31
+!s108 1699914485.000000
+!s107 W:/ISDIGI/proyectoDos/divisor_segmentado.sv|
+!s90 -reportprogress|300|-work|work|W:/ISDIGI/proyectoDos/divisor_segmentado.sv|
+!i113 0
+R9
+R3
+vduv
+R5
+Z10 DXx4 work 18 tb_divisor_sv_unit 0 22 e[HIdiOHhX=4?loeoiNo=1
+Z11 !s110 1699950720
+R7
+r1
+!s85 0
+!i10b 1
+!s100 jADl5oH>>NGjlgLCAK1:M2
+ITX]UZc:30]h4T_h6VVKl:1
+Z12 !s105 tb_divisor_sv_unit
+S1
+R0
+Z13 w1699915296
+Z14 8W:/ISDIGI/proyectoDos/tb_divisor.sv
+Z15 FW:/ISDIGI/proyectoDos/tb_divisor.sv
+!i122 143
+L0 265 8
+R8
+31
+Z16 !s108 1699950720.000000
+!s107 W:/ISDIGI/proyectoDos/tb_divisor.sv|
+Z17 !s90 -reportprogress|300|-work|work|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|W:/ISDIGI/proyectoDos/tb_divisor.sv|
+!i113 0
+R9
+R3
+4estimulos
+R5
+R10
+R11
+R7
+r1
+!s85 0
+!i10b 1
+!s100 1PzfJX]gZLAN@8eEOE^QW0
+ICZZNSzjJmm>_IV@g8><^i3
+R12
+S1
+R0
+R13
+R14
+R15
+!i122 143
+L0 53 0
+R8
+31
+R16
+Z18 !s107 W:/ISDIGI/proyectoDos/tb_divisor.sv|
+R17
+!i113 0
+R9
+R3
+vtb_divisor
+R5
+R10
+R11
+R7
+r1
+!s85 0
+!i10b 1
+!s100 mGWm0AfRAQzGS=V_=YRKE3
+I5DY]WiiN;f5;7BZA9F?[W0
+R12
+S1
+R0
+R13
+R14
+R15
+!i122 143
+L0 220 43
+R8
+31
+R16
+R18
+R17
+!i113 0
+R9
+R3
+Xtb_divisor_sv_unit
+R5
+R11
+Ve[HIdiOHhX=4?loeoiNo=1
+r1
+!s85 0
+!i10b 1
+!s100 E^@7eHKaNYG<PL0Og6Fg50
+Ie[HIdiOHhX=4?loeoiNo=1
+!i103 1
+S1
+R0
+R13
+R14
+R15
+!i122 143
+L0 3 0
+R8
+31
+R16
+R18
+R17
+!i113 0
+R9
+R3
+Ytest_if
+R5
+R10
+R11
+R7
+r1
+!s85 0
+!i10b 1
+!s100 DELegU5J8;Z4e2b3Z9dIh3
+Io14PfQ5mkcNz817WZbhJ^0
+R12
+S1
+R0
+R13
+R14
+R15
+!i122 143
+L0 16 0
+R8
+31
+R16
+R18
+R17
+!i113 0
+R9
+R3

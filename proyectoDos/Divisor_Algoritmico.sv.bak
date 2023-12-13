@@ -1,0 +1,75 @@
+module Divisor_Algoritmico
+
+#(parameter tamanyo=32)           
+(input CLK,
+input RSTa,
+input Start,
+input logic [tamanyo-1:0] Num,
+input logic [tamanyo-1:0] Den,
+
+output logic [tamanyo-1:0] Coc,
+output logic [tamanyo-1:0] Res,
+output logic Done);
+
+localparam s0 = 2'b00, s1 = 2'b01, s2 = 2'b10, s3 = 2'b11;
+logic [1:0] next_state, state;
+logic [tamanyo-1:0] ACCU, CONT, SignNum, SignDen, Q, M;
+
+always @(posedge CLK or negedge RSTa)
+begin
+	if(!RSTa)
+		state <= s0;
+	else
+case (state)	
+	s0: begin
+			state = Start == 1'b1 ? s1 : s0;
+			Done = 1'b0;
+			if(Start)
+				begin
+					ACCU <= '0;
+					CONT <= tamanyo-1;
+					SignNum <= Num[tamanyo-1];
+					SignDen <= Den[tamanyo-1];
+					Q<= Num; //Q <= Num[tamanyo-1]?(!Num+1):Num;
+					M<= Den; //M <= Den[tamanyo-1]?(!Den+1):Den;
+				end	
+		end
+		
+	s1: begin
+			state = s2;
+			{ACCU,Q} <= {ACCU[tamanyo-2:0],Q,1'b0};
+		end
+			
+	s2: begin
+		CONT = CONT -1 ;
+			if (ACCU >= M)
+				begin
+					Q<=Q+1;
+					ACCU<=ACCU-M;
+				if (CONT == 0)
+					state = s3;
+				else 
+					state = s1;
+				end
+			else 
+				begin
+					if (CONT == 0)
+						state = s3;
+					else 			
+						state = s1;
+				end
+		end
+		
+	s3: begin
+			state = s0;
+			Done = 1'b1;	
+			Coc<= Q; //Coc <= (SignNum^SignDen)?(!Q+1):Q;
+			Res<= ACCU; //Res <= SignNum?(!ACCU+1):ACCU;			
+		end
+	
+	default:state = s0;
+endcase
+end
+
+
+endmodule 

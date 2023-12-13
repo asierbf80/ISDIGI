@@ -1,0 +1,117 @@
+m255
+K4
+z2
+!s11f vlog 2020.2 2020.04, Apr 19 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dW:/ISDIGI/proyectoUno/work
+T_opt
+!s110 1696255293
+V[E=WZln7YCBSAQ9TdS?cf1
+04 7 4 work fifo_tb fast 0
+=1-00505623017d-651acd3c-2b9-3b00
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2020.2;71
+vcounter
+Z2 !s110 1696255208
+!i10b 1
+!s100 RDTW`DAQE;9ojV[VZzlaY3
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I8bnc^B::?9Qb:IngBYc@n3
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1695988535
+8W:/ISDIGI/proyectoUno/counter.v
+FW:/ISDIGI/proyectoUno/counter.v
+!i122 0
+L0 1 35
+Z5 OL;L;2020.2;71
+r1
+!s85 0
+31
+Z6 !s108 1696255208.000000
+!s107 W:/ISDIGI/proyectoUno/counter.v|
+!s90 -reportprogress|300|-work|work|W:/ISDIGI/proyectoUno/counter.v|
+!i113 0
+Z7 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vFIFO
+R2
+!i10b 1
+!s100 2J5KK>?2@`1YKQ<lN6I]H3
+R3
+IQP7ZMD26_jZiO>K@J@NH^2
+R4
+R0
+w1696248336
+8W:/ISDIGI/proyectoUno/FIFO.v
+FW:/ISDIGI/proyectoUno/FIFO.v
+!i122 1
+L0 1 207
+R5
+r1
+!s85 0
+31
+R6
+!s107 W:/ISDIGI/proyectoUno/FIFO.v|
+!s90 -reportprogress|300|-work|work|W:/ISDIGI/proyectoUno/FIFO.v|
+!i113 0
+R7
+R1
+n@f@i@f@o
+vfifo_tb
+Z8 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R2
+!i10b 1
+!s100 So`Nf2UMN0heT7@@b]V>O1
+R3
+IRVRLDYF3IQQW<O8m`TFZ=1
+R4
+S1
+R0
+w1696254901
+8W:/ISDIGI/proyectoUno/fifo_tb.sv
+FW:/ISDIGI/proyectoUno/fifo_tb.sv
+!i122 2
+L0 3 135
+R5
+r1
+!s85 0
+31
+R6
+!s107 W:/ISDIGI/proyectoUno/fifo_tb.sv|
+!s90 -reportprogress|300|-work|work|W:/ISDIGI/proyectoUno/fifo_tb.sv|
+!i113 0
+R7
+R1
+vshifter_2d
+R8
+R2
+!i10b 1
+!s100 b^]1EQSInHfkIj3;NG<2E0
+R3
+I>Kjl6G`a210A[=1`V]GKV1
+R4
+S1
+R0
+w1695202460
+8W:/ISDIGI/proyectoUno/shifter_2d.sv
+FW:/ISDIGI/proyectoUno/shifter_2d.sv
+!i122 3
+L0 1 28
+R5
+r1
+!s85 0
+31
+R6
+!s107 W:/ISDIGI/proyectoUno/shifter_2d.sv|
+!s90 -reportprogress|300|-work|work|W:/ISDIGI/proyectoUno/shifter_2d.sv|
+!i113 0
+R7
+R1

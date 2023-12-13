@@ -1,0 +1,19 @@
+Quartus Prime Archive log --	W:/ISDIGI/proyectoUno/FIFO.qarlog
+
+Archive:	W:/ISDIGI/proyectoUno/FIFO.qar
+Date:		Sun Oct 08 18:54:27 2023
+Quartus Prime		17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
+
+	=========== Files Selected: ===========
+W:/ISDIGI/proyectoUno/FIFO.out.sdc
+W:/ISDIGI/proyectoUno/FIFO.qpf
+W:/ISDIGI/proyectoUno/FIFO.qsf
+W:/ISDIGI/proyectoUno/FIFO.v
+W:/ISDIGI/proyectoUno/counter.v
+W:/ISDIGI/proyectoUno/fifo_tb.sv
+W:/ISDIGI/proyectoUno/shifter_2d.sv
+c:/intelfpga/17.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 8 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

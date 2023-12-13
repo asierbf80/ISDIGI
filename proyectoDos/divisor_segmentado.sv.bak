@@ -1,0 +1,24 @@
+module divisor_segmentado();
+
+#(parameter tamanyo=8) 
+
+
+n_etapas = 1+2*tamanyo;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+endmodule 

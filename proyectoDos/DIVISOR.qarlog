@@ -1,0 +1,18 @@
+Quartus Prime Archive log --	W:/ISDIGI/proyectoDos/DIVISOR.qarlog
+
+Archive:	W:/ISDIGI/proyectoDos/DIVISOR.qar
+Date:		Mon Nov 13 23:34:25 2023
+Quartus Prime		17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
+
+	=========== Files Selected: ===========
+W:/ISDIGI/proyectoDos/DIVISOR.out.sdc
+W:/ISDIGI/proyectoDos/DIVISOR.qpf
+W:/ISDIGI/proyectoDos/DIVISOR.qsf
+W:/ISDIGI/proyectoDos/Divisor_Algoritmico.sv
+W:/ISDIGI/proyectoDos/divisor_segmentado.sv
+W:/ISDIGI/proyectoDos/tb_divisor.sv
+c:/intelfpga/17.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 7 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

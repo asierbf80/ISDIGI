@@ -1,0 +1,210 @@
+module FIFO (CLOCK, RESET_N, CLEAR_N, DATA_IN, READ, WRITE, F_FULL_N, F_EMPTY_N, USE_DW, DATA_OUT);
+
+input CLOCK, RESET_N, CLEAR_N, READ, WRITE;
+output [4:0] USE_DW;
+output reg F_FULL_N, F_EMPTY_N;
+input [7:0] DATA_IN;
+output reg [7:0] DATA_OUT;
+
+reg enable_shifter, up_down_aux, aux_load, select_mux, enable_count;
+
+localparam s0 = 2'b00, s1 = 2'b01, s2 = 2'b10;
+reg [1:0] next_state, state;
+
+wire [1:0] aux_wr ; // cable que hace que salte de estado 
+wire [4:0] aux_cuenta; // valor de elementos que hay en el registro  
+wire [7:0] aux_dataout; // salida del valor del registro 
+
+assign aux_wr= {WRITE, READ};
+
+//------------ determinación reset ------------
+always @(posedge CLOCK or negedge RESET_N)
+begin
+	if(!RESET_N)
+		state <= s0;
+	else
+		state <= next_state;
+end
+
+
+//------------ determinación salto estados ------------
+always @(state,aux_wr)
+case(state)
+	s0: next_state = (aux_wr==2'b10) ? s1 : s0;
+	s1: next_state = (aux_wr==2'b10 && aux_cuenta == 5'd31) ? s2 :
+						  (aux_wr==2'b01 && aux_cuenta == 5'd1) ? s0 : s1;
+	s2: next_state = (aux_wr==2'b01) ? s1 : s2;
+	
+ default: next_state = s0;
+ 
+endcase
+
+//------------ determinación salida estados ------------
+always @(*)
+case(state)
+	s0: 
+	begin
+	F_EMPTY_N = 1'b0; 
+	F_FULL_N = 1'b1; 
+		
+		if(aux_wr == 2'b11)
+		begin
+			aux_load = 1'b1;
+			select_mux = 1'b1;
+			enable_count = 1'b0;
+			enable_shifter = 1'b0;
+			up_down_aux = 1'b0;
+		end
+			
+		else if (aux_wr == 2'b10)
+		begin
+			aux_load = 1'b0;
+			select_mux = 1'b0;
+			enable_count = 1'b1;
+			enable_shifter = 1'b1;
+			up_down_aux = 1'b1;
+		end
+			
+		else
+		begin
+			aux_load = 1'b0;
+    		select_mux = 1'b0;			
+			enable_count = 1'b0;			
+			enable_shifter = 1'b0;
+			up_down_aux = 1'b1;
+		end
+		
+	end	
+
+	s1: 
+	begin
+	F_EMPTY_N = 1'b1;
+	F_FULL_N = 1'b1; 
+	
+		if(aux_wr == 2'b11)
+		begin
+			aux_load = 1'b1;
+			select_mux = 1'b0;			
+			enable_count = 1'b0;			
+			enable_shifter = 1'b1;
+			up_down_aux = 1'b0;
+		end
+		
+		else if(aux_wr == 2'b10)
+		begin
+			aux_load = 1'b0;
+			select_mux = 1'b0;			
+			enable_count = 1'b1;			
+			enable_shifter = 1'b1;
+			up_down_aux = 1'b1;
+		end
+
+		else if(aux_wr == 2'b01)
+		begin
+			aux_load = 1'b1;
+			select_mux = 1'b0;			
+			enable_count = 1'b1;			
+			enable_shifter = 1'b0;
+			up_down_aux = 1'b0;
+		end
+		
+		else
+		begin
+			aux_load = 1'b0;
+			select_mux = 1'b0;			
+			enable_count = 1'b0;			
+			enable_shifter = 1'b0;
+			up_down_aux = 1'b0;	
+		end
+	
+	end
+
+	s2: 
+	begin 
+	F_EMPTY_N = 1'b1; 
+	F_FULL_N = 1'b0; 
+		
+		if (aux_wr == 2'b11)
+		begin
+			aux_load = 1'b1;
+			select_mux = 1'b0;			
+			enable_count = 1'b0;			
+			enable_shifter = 1'b1;
+			up_down_aux = 1'b0;
+		end
+
+		else if(aux_wr == 2'b10)
+		begin
+			aux_load = 1'b0;
+			select_mux = 1'b0;			
+			enable_count = 1'b0;			
+			enable_shifter = 1'b0;
+			up_down_aux = 1'b1;
+		end
+	
+		else if(aux_wr == 2'b01)
+		begin
+			aux_load = 1'b1;
+			select_mux = 1'b0;			
+			enable_count = 1'b1;			
+			enable_shifter = 1'b1;
+			up_down_aux = 1'b0;
+		end
+		
+		else
+		begin
+			aux_load = 1'b0;
+			select_mux = 1'b0;			
+			enable_count = 1'b0;			
+			enable_shifter = 1'b0;
+			up_down_aux = 1'b0;
+		end
+		
+	end
+default: 		
+	begin
+	F_EMPTY_N = 1'b0; 
+	F_FULL_N = 1'b1; 
+				
+		aux_load = 1'b0;
+		select_mux = 1'b0;
+		enable_count = 1'b0;
+		enable_shifter = 1'b0;
+		up_down_aux = 1'b0;
+	end
+		
+endcase
+
+//------------ instanciación contador y registro ------------
+counter contador (.CLK(CLOCK),
+						.RSTn(RESET_N),
+						.EN(enable_count),
+						.UP_DOWN(up_down_aux),
+						.COUNT(aux_cuenta));
+
+shifter_2d registro (.clock(CLOCK),
+							.reset(RESET_N),
+							.enable(enable_shifter),  
+							.modo(1'b1),
+							.seleccion(aux_cuenta-1),
+							.entrada_serie(DATA_IN),
+							.clear(1'b1),
+							.salida_serie(aux_dataout));
+
+//------------ Multiplexor ------------				
+// Necesitamos un mux para dataout, para saber si el dato viene del shifter o del data in.
+always @(posedge CLOCK)
+begin 
+	if (aux_load)
+		if (select_mux)
+				DATA_OUT <= DATA_IN; // saco el dato que entra
+		else
+			DATA_OUT <= aux_dataout ; // saco el dato del registro 
+	else DATA_OUT <= DATA_OUT; 
+
+	
+end 
+
+assign USE_DW = aux_cuenta;
+
+endmodule 

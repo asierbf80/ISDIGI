@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Oct 08 18:38:07 2023
+Quartus Prime Version : 17.1.1 Internal Build 593 12/11/2017 SJ Standard Edition
+Revision Name : FIFO
+Top-level Entity Name : FIFO
+Family : Cyclone IV E
+Device : EP4CE115F29C7
+Timing Models : Final
+Total logic elements : 317 / 114,480 ( < 1 % )
+    Total combinational functions : 189 / 114,480 ( < 1 % )
+    Dedicated logic registers : 272 / 114,480 ( < 1 % )
+Total registers : 272
+Total pins : 28 / 529 ( 5 % )
+Total virtual pins : 0
+Total memory bits : 0 / 3,981,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at divisor_segmentado.sv(6): object "START" differs only in case from object "start" in the same scope File: W:/ISDIGI/proyectoDos/divisor_segmentado.sv Line: 6
+Warning (10268): Verilog HDL information at Divisor_Algoritmico.sv(18): always construct contains both blocking and non-blocking assignments File: W:/ISDIGI/proyectoDos/Divisor_Algoritmico.sv Line: 18
